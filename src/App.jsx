@@ -6,31 +6,23 @@ import embassies from '../data/embassies'
 import Emergency from '../Components/Emergency'
 
 
-
-
 function App() {
 
-
   const [countryCode, setCountryCode] = useState("")
-  const [advisory, setAdvisory] = useState("")
+  const [advisoryMessage, setAdvisoryMessage] = useState("")
   const [emergencyNum, setEmergencyNum] = useState({})
-  const [clicked, setClicked] = useState(false)
+  const [searchSubmitted, setSearchSubmitted] = useState(false)
   const [tabIndex, setTabIndex] = useState(0)
   const [embassyData, setEmbassyData] = useState("")
   const [isEmbassyAvailable, setIsEmbassyAvailable]  = useState(false)
-  const [countrySubmitted, setCountrySubmitted] = useState(false)
-  const [count, setCount] = useState(0)
-
-  const inputRef = useRef();
+  const inputRef = useRef(false);
+  const memberOf112Ref = useRef();
   const name = useRef("United States of America");
-  const hasEmbassy = useRef(false);
-
-
-  
   
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
   useEffect(() => {
     travelData()
   }, []);
@@ -39,17 +31,12 @@ function App() {
   
 
 function handleChange (e) {
-
   name.current = e.target.value;
-  
-    // setCountry(e.target.value)
 }
 
+function getEmbassyData() {
 
-
-function embassyInfo() {
-
-let info = ""
+  let info = ""
 
   embassies.map(e => {
   
@@ -82,14 +69,8 @@ let info = ""
 
 }
 
-
-
-
 const travelData = () => {
-
-
   countryData.map(e => {
-    
     if(e.Country.Name.toLowerCase() === name.current.toLowerCase() ) {
 
       const countryCode = e.Country.ISOCode;
@@ -103,39 +84,36 @@ const travelData = () => {
           //not figure out how to use the countryCode variable in the response path. Square bracket worked
           // setAdvisory(eval(`${`response.data.data.` + countryCode}`).advisory.message)
           setCountryCode(countryCode)
-          setAdvisory(response.data.data[countryCode].advisory.message)
+          setAdvisoryMessage(response.data.data[countryCode].advisory.message)
 
           if(e.Member_112) {
+            memberOf112Ref.current = true;
             setEmergencyNum(
               { Police: e.Police.All[0], 
                 Fire: e.Fire.All[0], 
                 Ambulance: e.Ambulance.All[0],
-                Member_112: e.Member_112 ? "112" : null,
+                "Emergency": e.Member_112 ? "112" : null,
                 
               })
             } else {
+              memberOf112Ref.current = false;
+
               setEmergencyNum(
                 { Police: e.Police.All[0], 
                   Fire: e.Fire.All[0], 
                   Ambulance: e.Ambulance.All[0],
-
-                  
                 })
             }
             
-          setClicked(true)
-          embassyInfo()
+          setSearchSubmitted(true)
+          getEmbassyData()
         
-          
-
       })
       
     }
   })
       
 }
-
-
 
 
 function handleTab(index){
@@ -152,47 +130,39 @@ const handleKeyDown = (event) => {
 
   return (
 
-
     <div className='app-container'>
 
       <div className='header'>
         <div className="logo-container">
-          <img className='logo-img' src="/logo.png" alt="" />
+          <img className='logo-img' src="/logo.png" alt="travel advisor logo" />
           <p className='logo-text'><span className='logo-text-span'>Travel</span>Advisor</p>
         </div>
         <div className='search-container'>
-          <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
-          {/* <button id='btn' onClick={travelData}>Search</button> */}
-          <img className='search-icon' onClick={travelData} src="/search.png" alt="" />
+          <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Enter country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
+          <img className='search-icon' onClick={travelData} src="/search.png" alt="magnifying glass search icon" />
         </div>
       </div>
 
       <div className='country-container'>
-        {clicked ? <img className='flag' src={`https://flagsapi.com/${countryCode}/shiny/64.png`} alt={`flag of ${name.current}`}/> : null }
-
-        {clicked ? <h1 className='country-text'>{name.current.toUpperCase()}</h1> : null }
+        {searchSubmitted ? <img className='flag' src={`https://flagsapi.com/${countryCode}/shiny/64.png`} alt={`flag of ${name.current}`}/> : null }
+        {searchSubmitted ? <h1 className='country-name-text'>{name.current.toUpperCase()}</h1> : null }
       </div>
 
-
-
-      <div className='advisory-container' onClick={embassyInfo}>
-        <p className='advisory-msg'>{advisory}</p>
+      <div className='advisory-container' onClick={getEmbassyData}>
+        <p className='advisory-msg'>{advisoryMessage}</p>
       </div>
-
-
 
       <div className="tabs-container">
-          <div className={tabIndex === 0 ? 'home tabs active-tab' : 'home tabs'}onClick={() => handleTab(0)}>
-            <p className='tab main-tab'>EMERGENCY # 's</p>
+          <div className={tabIndex === 0 ? 'tabs active-tab' : 'tabs'}onClick={() => handleTab(0)}>
+            <p className='tab-name'>EMERGENCY # 's</p>
           </div>
 
-          <div className={tabIndex === 1 ? 'embassy tabs active-tab' : 'embassy tabs'} onClick={() => handleTab(1)}>
-            <p className='tab'>EMBASSY</p>
+          <div className={tabIndex === 1 ? 'tabs active-tab' : 'tabs'} onClick={() => handleTab(1)}>
+            <p className='tab-name'>EMBASSY</p>
           </div>
-
       </div>
 
-      <div className={tabIndex === 0 ? 'numbers-container active-content' : 'numbers-container content'}>
+      <div className={tabIndex === 0 ? 'numbers-container active-content numbers' : 'numbers-container content'}>
           <Emergency 
               emergencyNum = {emergencyNum}
               emergencyType = "Police"
@@ -205,29 +175,27 @@ const handleKeyDown = (event) => {
               emergencyNum = {emergencyNum}
               emergencyType = "Ambulance"
             />
-          {/* <Emergency 
+         {memberOf112Ref.current ? <Emergency 
               emergencyNum = {emergencyNum}
-              emergencyType = "Member_112"
-            /> */}
-      {/* {clicked ? <p className='police emergency'>Police: {emergencyNum ? emergencyNum.Police : "n/a" }</p> : null } */}
+              emergencyType = "Emergency"
+            /> : null} 
+      {/* {searchSubmitted ? <p className='police emergency'>Police: {emergencyNum ? emergencyNum.Police : "n/a" }</p> : null } */}
       </div>
 
-      <div className={tabIndex === 1 ? 'embassy-container active-content embassy-container' : 'content'}>
+      <div className={tabIndex === 1 ? 'active-content embassy-container' : 'content'}>
             {isEmbassyAvailable ? 
-            <div>
-            <img className='pin-img' src="/pin.png" alt="" />
-            <h1 className='embassy-title'><span className='embassy-text-span '>United States Embassy in</span> {embassyData.Name}</h1>
-            <p><span className='embassy-text-span'>Address:</span> {embassyData.Address}</p>
-            <p><span className='embassy-text-span'>Phone:</span> {embassyData.Phone}</p>
-            <p><span className='embassy-text-span'>Website:</span> <a href={embassyData.Website}>{embassyData.Website}</a></p>
-            </div> 
-              : <p className='no-embassy'>No Embassy Available</p>}
+              <div>
+              <img className='pin-img' src="/pin.png" alt="" />
+              <h1 className='embassy-title'><span className='embassy-text-span '>United States Embassy in</span> {embassyData.Name}</h1>
+              <p><span className='embassy-text-span'>Address:</span> {embassyData.Address}</p>
+              <p><span className='embassy-text-span'>Phone:</span> {embassyData.Phone}</p>
+              <p><span className='embassy-text-span'>Website:</span> <a href={embassyData.Website}>{embassyData.Website}</a></p>
+              </div> 
+              : <p className='no-embassy'>No Embassy Available</p>
+            }
       </div>
 
     </div>
-
-
-  
 
 
   )

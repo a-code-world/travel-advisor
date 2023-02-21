@@ -1694,17 +1694,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "106"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "105"
         ]
       },
       "Police": {
         "All": [
-          null
+          "106 "
         ]
       },
       "Dispatch": {
