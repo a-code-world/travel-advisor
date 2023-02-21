@@ -157,13 +157,13 @@ const handleKeyDown = (event) => {
 
       <div className='header'>
         <div className="logo-container">
-          <img className='logo-img' src="/assets/logo.png" alt="" />
+          <img className='logo-img' src="assets/logo.png" alt="" />
           <p className='logo-text'><span className='logo-text-span'>Travel</span>Advisor</p>
         </div>
         <div className='search-container'>
           <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
           {/* <button id='btn' onClick={travelData}>Search</button> */}
-          <img className='search-icon' onClick={travelData} src="/assets/search.png" alt="" />
+          <img className='search-icon' onClick={travelData} src="assets/search.png" alt="" />
         </div>
       </div>
 
@@ -215,7 +215,7 @@ const handleKeyDown = (event) => {
       <div className={tabIndex === 1 ? 'embassy-container active-content embassy-container' : 'content'}>
             {isEmbassyAvailable ? 
             <div>
-            <img className='pin-img' src="/assets/pin.png" alt="" />
+            <img className='pin-img' src="assets/pin.png" alt="" />
             <h1 className='embassy-title'><span className='embassy-text-span '>United States Embassy in</span> {embassyData.Name}</h1>
             <p><span className='embassy-text-span'>Address:</span> {embassyData.Address}</p>
             <p><span className='embassy-text-span'>Phone:</span> {embassyData.Phone}</p>
