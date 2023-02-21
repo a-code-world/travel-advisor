@@ -3,7 +3,7 @@ import './App.css'
 import axios from 'axios'
 import countryData from '../data/countryData'
 import embassies from '../data/embassies'
-import Emergency from '../Components/Emergency'
+import Emergency from './Components/Emergency'
 
 
 function App() {

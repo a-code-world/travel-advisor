@@ -875,17 +875,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "997"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "998"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {
@@ -1482,17 +1482,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "772-03-73"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "18"
         ]
       },
       "Police": {
         "All": [
-          null
+          "17"
         ]
       },
       "Dispatch": {
@@ -3202,17 +3202,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "999"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "999"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {
@@ -3473,17 +3473,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "999"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "999"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {
@@ -3527,7 +3527,7 @@ export default [
     },
     {
       "Country": {
-        "Name": "Korea, Democratic People's Republic of",
+        "Name": "North Korea",
         "ISOCode": "KP",
         "ISONumeric": "408"
       },
@@ -5487,7 +5487,7 @@ export default [
     },
     {
       "Country": {
-        "Name": "Russian Federation",
+        "Name": "Russia",
         "ISOCode": "RU",
         "ISONumeric": "643"
       },
@@ -7478,17 +7478,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "999"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "999"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {
