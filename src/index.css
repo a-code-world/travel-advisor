@@ -1,76 +1,122 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing:border-box;
  
 
 }
 
+*{
+  box-sizing:border-box;
+  /* font-family: Inter; */
+}
 
 input {
-  /* margin: 1em; */
-  border-radius: 8px;
+  margin-right: 1em;
   border: none;
-  padding: 0.5em;
-  /* font-family: inter; */
+  /* padding: 0.5em; */
   font-size: 1em;
-  box-shadow: 0px 13px 15px -3px rgba(0,0,0,0.1);
+  width: 150px;
+  color: rgba(146, 143, 143, 0.719);
+  font-weight: bold;
 }
 
 input:focus {
   outline: none;
 }
-button, 
+
 input,
+.search-icon,
 .tab {
   cursor: pointer;
 }
 
 button {
-  border-radius: 8px;
   border: none;
   box-shadow: 0px 13px 15px -3px rgba(0,0,0,0.1);
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: Roboto;
+  font-weight: 500;
+  background-color: whitesmoke;
+ 
 
 
 }
 
 body {
-
+ 
+ background-color: gainsboro;
   padding: 0;
   margin: 0;
   max-width: 740px;
   margin: auto;
-height: 100%;
-  /* min-height:  100vh; */
+  height: 100%;
+
 }
 
 h1 {
-  /* margin: 0; */
   font-size: clamp(1.7rem, 3vw, 2rem);
   padding-right: 0.3em;
+ 
 }
 
 .emergency-container,
 .advisory-container,
-.embassy-container,
-.app-container {
+.embassy-container, 
+.search-container,
+button {
   box-shadow: 0px 13px 15px -3px rgba(0,0,0,0.1);
   border-radius: 10px;
 
 
 }
 
-.input-container {
-  padding: 1em;
+.header {
   display: flex;
+  padding: 1em;
+  padding-left: 0;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 2em;
 }
 
-/* .new-container {
+.logo-container {
   display: flex;
-  justify-content: center;
-  
+  align-items: center;
+  /* flex-direction: column; */
+}
 
-} */
+.logo-img {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-text {
+  margin: 0;
+  color: #5AD7FF;
+  font-weight: 700;
+  font-size: 1.6em;
+  font-family: Karla;
+}
+
+.logo-text-span {
+  color: white;
+  font-weight: 700;
+}
+
+.search-container {
+  display: flex;
+  padding: 0.25em;
+  background-color: white;
+}
+
+
+
+.emergency-type-span {
+  font-weight: 500;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -78,10 +124,13 @@ h1 {
   width: 100%;
   flex-direction: column;
   background-color: black;
+  
 
 }
 
 .app-container {
+  
+  padding: 1rem 1rem 1rem 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -95,17 +144,10 @@ h1 {
   width: 100%;
  height: 100%;
 
- 
-  
-  
-  
-  
- 
-
-  
+ border: 1px solid rgb(138, 138, 138);
+ border-radius: 10px;
 
 }
-
 .country-container {
   display: flex;
   margin: 0;
@@ -113,25 +155,24 @@ h1 {
 }
 
 .flag {
-  padding: 1em;
+  padding: 1em 1em 1em 0em;
   max-width: 100%;
-
-
 }
-
-
 
 .advisory-container  {
   background-color: whitesmoke;
-  margin: 1em;
+ 
+  /* margin: 1em; */
 }
 
 .embassy-container {
   display: flex;
   flex-direction: column;
   background-color: whitesmoke;
-  margin: 1em;
+  /* margin: 1em; */
   padding: 1em;
+  height: 300px;
+  
 }
 
 .embassy-title {
@@ -139,13 +180,22 @@ h1 {
 }
 
 .emergency-container {
+  /* display: flex; */
+  height: 100%;
   background-color: whitesmoke;
-  margin: 0.8em;
+  margin-bottom: 2em;
   padding-left: 0.7em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   
+}
 
+.no-embassy {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  height: 100%;
+  margin: 0;
 }
 
 .advisory-msg {
@@ -155,9 +205,10 @@ h1 {
  
 }
 
-.numbers-container, .advisory-msg {
+.advisory-msg {
   padding: 1em;
 }
+
 
 
 
@@ -188,9 +239,10 @@ h1 {
 }
 
 .tabs-container {
-  padding-left: 1em;
+  /* padding-left: 1em; */
   display: flex;
-  margin-top: 1.2em ;
+  margin-top: 4.5em ;
+  margin-bottom: 2rem;
 }
 
 .tab {
@@ -209,7 +261,8 @@ h1 {
 
 }
 .active-tab {
-  background-color: rgb(136, 136, 231);
+  /* background-color: rgb(136, 136, 231); */
+  background-color: #5AD7FF;
   color: white;
   /* font-size: 1.5em; */
 }
@@ -238,3 +291,18 @@ h1 {
   margin-right: auto;
 }
 
+@media (max-width: 480px) {
+  .app-container {
+    border-radius: 0;
+  }
+
+  .logo-text {
+    display: none;
+    
+  }
+}
+@media (max-width: 768px) {
+  .app-container {
+    border: none;
+  };
+}

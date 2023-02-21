@@ -23,7 +23,7 @@ function Emergency(props) {
 
   return (
     <div className='emergency-container'>
-    <p className={` ${props.emergencyType.toLowerCase()} emergency`}>{props.emergencyType}: {props.emergencyNum ? props.emergencyNum[props.emergencyType] : "n/a" }</p> 
+    <p className={` ${props.emergencyType.toLowerCase()} emergency`}><span className='emergency-type-span'>{props.emergencyType}</span>: {props.emergencyNum ? props.emergencyNum[props.emergencyType] : "n/a" }</p> 
     </div>
 
   

@@ -665,17 +665,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "911"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "911"
         ]
       },
       "Police": {
         "All": [
-          null
+          "911"
         ]
       },
       "Dispatch": {
@@ -5945,17 +5945,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "151"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "999"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {

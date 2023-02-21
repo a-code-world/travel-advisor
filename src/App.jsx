@@ -155,10 +155,16 @@ const handleKeyDown = (event) => {
 
     <div className='app-container'>
 
-      <div className='input-container'>
-        <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
-        <button id='btn' onClick={travelData}>Search</button>
-
+      <div className='header'>
+        <div className="logo-container">
+          <img className='logo-img' src="..\assets\logo.png" alt="" />
+          <p className='logo-text'><span className='logo-text-span'>Travel</span>Advisor</p>
+        </div>
+        <div className='search-container'>
+          <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
+          {/* <button id='btn' onClick={travelData}>Search</button> */}
+          <img className='search-icon' onClick={travelData} src="..\assets\search.png" alt="" />
+        </div>
       </div>
 
       <div className='country-container'>
@@ -177,7 +183,7 @@ const handleKeyDown = (event) => {
 
       <div className="tabs-container">
           <div className={tabIndex === 0 ? 'home tabs active-tab' : 'home tabs'}onClick={() => handleTab(0)}>
-            <p className='tab main-tab'>EMERGENCY #</p>
+            <p className='tab main-tab'>EMERGENCY # 's</p>
           </div>
 
           <div className={tabIndex === 1 ? 'embassy tabs active-tab' : 'embassy tabs'} onClick={() => handleTab(1)}>
@@ -215,7 +221,7 @@ const handleKeyDown = (event) => {
             <p><span className='embassy-text-span'>Phone:</span> {embassyData.Phone}</p>
             <p><span className='embassy-text-span'>Website:</span> <a href={embassyData.Website}>{embassyData.Website}</a></p>
             </div> 
-              : <p>No Embassy Available</p>}
+              : <p className='no-embassy'>No Embassy Available</p>}
       </div>
 
     </div>
