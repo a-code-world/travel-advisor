@@ -168,7 +168,7 @@ const handleKeyDown = (event) => {
       </div>
 
       <div className='country-container'>
-        {clicked ? <img className='flag' src={`https://flagsapi.com/${countryCode}/shiny/48.png`} alt={`flag of ${name.current}`}/> : null }
+        {clicked ? <img className='flag' src={`https://flagsapi.com/${countryCode}/shiny/64.png`} alt={`flag of ${name.current}`}/> : null }
 
         {clicked ? <h1 className='country-text'>{name.current.toUpperCase()}</h1> : null }
       </div>
