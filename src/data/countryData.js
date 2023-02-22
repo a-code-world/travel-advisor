@@ -29,36 +29,36 @@ export default [
       "LocalOnly": true,
       "Notes": false
     },
-    {
-      "Country": {
-        "Name": "Åland Islands",
-        "ISOCode": "AX",
-        "ISONumeric": "248"
-      },
-      "Ambulance": {
-        "All": [
-          null
-        ]
-      },
-      "Fire": {
-        "All": [
-          null
-        ]
-      },
-      "Police": {
-        "All": [
-          null
-        ]
-      },
-      "Dispatch": {
-        "All": [
-          null
-        ]
-      },
-      "Member_112": true,
-      "LocalOnly": false,
-      "Notes": ""
-    },
+    // {
+    //   "Country": {
+    //     "Name": "Åland Islands",
+    //     "ISOCode": "AX",
+    //     "ISONumeric": "248"
+    //   },
+    //   "Ambulance": {
+    //     "All": [
+    //       null
+    //     ]
+    //   },
+    //   "Fire": {
+    //     "All": [
+    //       null
+    //     ]
+    //   },
+    //   "Police": {
+    //     "All": [
+    //       null
+    //     ]
+    //   },
+    //   "Dispatch": {
+    //     "All": [
+    //       null
+    //     ]
+    //   },
+    //   "Member_112": true,
+    //   "LocalOnly": false,
+    //   "Notes": ""
+    // },
     {
       "Country": {
         "Name": "Albania",

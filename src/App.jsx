@@ -4,6 +4,9 @@ import axios from 'axios'
 import countryData from './data/countryData'
 import embassies from './data/embassies'
 import Emergency from './Components/Emergency'
+import Select from 'react-select'
+import Dropdown from './Components/Dropdown'
+
 
 
 function App() {
@@ -18,10 +21,26 @@ function App() {
   const inputRef = useRef(false);
   const memberOf112Ref = useRef();
   const name = useRef("United States of America");
-  
+
+  const dropdownData = useRef();
+
   useEffect(() => {
-    inputRef.current.focus();
-  }, []);
+      let temp = []
+    countryData.map((item) => {
+        temp.push({
+          value: item.Country.Name,
+          label: item.Country.Name,
+        })
+    })
+
+    dropdownData.current = temp;
+  },[]);
+
+  
+  
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // }, []);
 
   useEffect(() => {
     travelData()
@@ -30,9 +49,9 @@ function App() {
 
   
 
-function handleChange (e) {
-  name.current = e.target.value;
-}
+// function handleChange (e) {
+//   name.current = e.target.value;
+// }
 
 function getEmbassyData() {
 
@@ -115,6 +134,11 @@ const travelData = () => {
       
 }
 
+function handleChange (choice) {
+  name.current = choice.value;
+  travelData();
+}
+
 
 function handleTab(index){
   setTabIndex(index)
@@ -138,8 +162,9 @@ const handleKeyDown = (event) => {
           <p className='logo-text'><span className='logo-text-span'>Travel</span>Advisor</p>
         </div>
         <div className='search-container'>
-          <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Enter country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/>
-          <img className='search-icon' onClick={travelData} src="/search.png" alt="magnifying glass search icon" />
+          <Dropdown handleChange = {handleChange} />
+          {/* <input onKeyDown={handleKeyDown} id='input' ref={inputRef}  className='input' placeholder='Enter country...' type="text" spellcheck="false" onChange={handleChange} onSubmit={travelData}/> */}
+          {/* <img className='search-icon' onClick={travelData} src="/search.png" alt="magnifying glass search icon" /> */}
         </div>
       </div>
 

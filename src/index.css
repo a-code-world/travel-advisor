@@ -118,7 +118,7 @@ button {
 
 .search-container {
   display: flex;
-  padding: 0.25em;
+  /* padding: 0.25em; */
   background-color: white;
 }
 
@@ -323,6 +323,13 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+.Select-menu-outer {
+  color: #5AD7FF;
+ 
+}
+
 
 @media (max-width: 480px) {
   .app-container {
