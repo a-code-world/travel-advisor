@@ -695,17 +695,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "112"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "118"
         ]
       },
       "Police": {
         "All": [
-          null
+          "117"
         ]
       },
       "Dispatch": {
@@ -1057,17 +1057,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "112"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "18"
         ]
       },
       "Police": {
         "All": [
-          null
+          "17"
         ]
       },
       "Dispatch": {
@@ -1268,17 +1268,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "1220"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "118"
         ]
       },
       "Police": {
         "All": [
-          null
+          "117"
         ]
       },
       "Dispatch": {
@@ -1298,7 +1298,7 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "2251-4242"
         ]
       },
       "Fire": {
@@ -1754,17 +1754,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "112"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "112"
         ]
       },
       "Police": {
         "All": [
-          null
+          "199"
         ]
       },
       "Dispatch": {
@@ -2024,17 +2024,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "112"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "115"
         ]
       },
       "Police": {
         "All": [
-          null
+          "114"
         ]
       },
       "Dispatch": {
@@ -2054,17 +2054,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "114"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "116"
         ]
       },
       "Police": {
         "All": [
-          null
+          "113"
         ]
       },
       "Dispatch": {
@@ -2384,17 +2384,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          "1300‐1399"
+          "177"
         ]
       },
       "Fire": {
         "All": [
-          "18"
+          "177"
         ]
       },
       "Police": {
         "All": [
-          "1730"
+          "177"
         ]
       },
       "Dispatch": {
@@ -5583,17 +5583,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "999"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "999"
         ]
       },
       "Police": {
         "All": [
-          null
+          "999"
         ]
       },
       "Dispatch": {
@@ -6697,17 +6697,17 @@ export default [
       },
       "Ambulance": {
         "All": [
-          null
+          "117"
         ]
       },
       "Fire": {
         "All": [
-          null
+          "118"
         ]
       },
       "Police": {
         "All": [
-          "101"
+          "117"
         ]
       },
       "Dispatch": {
